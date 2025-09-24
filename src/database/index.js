@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import knex from 'knex'
 import knexConfig from '../../knexfile.js'
 
