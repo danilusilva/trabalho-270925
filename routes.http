@@ -1,5 +1,9 @@
-GET http://localhost:3333
+GET http://localhost:3333/
 
 ###
 
-GET http://localhost:3333/produtos/1
+GET http://localhost:3333/marcas
+
+###
+
+GET http://localhost:3333/marcas/199
