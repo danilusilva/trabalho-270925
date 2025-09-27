@@ -7,3 +7,11 @@ GET http://localhost:3333/marcas
 ###
 
 GET http://localhost:3333/marcas/199
+
+###
+
+GET http://localhost:3377/clientes
+
+###
+
+GET http://localhost:3377/clientes/:id
