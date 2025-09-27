@@ -43,7 +43,7 @@ const getPedidosQuery = () => {
         "itens_pedido.preco_unitario",
         "produtos.nome as produto_nome"
       )
-        // JOIN 1: Pega os dados do cliente (da tabela 'clientes')
+      // JOIN 1: Pega os dados do cliente (da tabela 'clientes')
       .leftJoin("clientes", "pedidos.cliente_id", "clientes.id")
       // JOIN 2: Pega os itens (da tabela 'itens_pedido')
       .leftJoin("itens_pedido", "pedidos.id", "itens_pedido.id_pedido")
@@ -135,7 +135,7 @@ export async function listPedidosByCidade(req, res) {
     });
   }
 }
-//  POST /pedidos: Cria um novo pedido com itens 
+//  POST /pedidos: Cria um novo pedido com itens
 export async function storePedido(req, res) {
   const { cliente_id, itens } = req.body;
 
@@ -149,7 +149,7 @@ export async function storePedido(req, res) {
     });
   }
 
-  //  CÁLCULO DO TOTAL 
+  //  CÁLCULO DO TOTAL
   const totalDoPedido = itens.reduce((soma, item) => {
     // Multiplica a quantidade pelo preço unitário e soma ao total acumulado
     const subtotal = item.quantidade * item.preco_unitario;
@@ -165,7 +165,7 @@ export async function storePedido(req, res) {
     const [pedidoId] = await trx("pedidos").insert({
       cliente_id: cliente_id,
       data: new Date(),
-      total: totalFormatado, 
+      total: totalFormatado,
     });
 
     // 3. Prepara os Itens para Inserção (Não mudou)

@@ -3,13 +3,12 @@
  * @returns { Promise<void> }
  */
 export function up(knex) {
-  return knex.schema
-    .createTable('clientes', (table) => {
-      table.increments('id').primary();
-      table.string('nome', 100).notNullable();
-      table.string('email', 100).notNullable().unique();
-      table.string('cidade', 50).notNullable();
-    });
+  return knex.schema.createTable("clientes", (table) => {
+    table.increments("id").primary();
+    table.string("nome", 100).notNullable();
+    table.string("email", 100).notNullable().unique();
+    table.string("cidade", 50).notNullable();
+  });
 }
 
 /**
@@ -17,6 +16,5 @@ export function up(knex) {
  * @returns { Promise<void> }
  */
 export function down(knex) {
-  return knex.schema
-    .dropTable('clientes');
+  return knex.schema.dropTable("clientes");
 }
