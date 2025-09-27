@@ -4,11 +4,11 @@
  */
 export function up(knex) {
   return knex.schema
-    .createTable('marcas', (table) => {
-        table.increments('id').primary();
-        table.string('nome', 100).notNullable();
-        table.string('site', 100);
-        table.string('telefone', 15);
+    .createTable('clientes', (table) => {
+      table.increments('id').primary();
+      table.string('nome', 100).notNullable();
+      table.string('email', 100).notNullable().unique();
+      table.string('cidade', 50).notNullable();
     });
 }
 
@@ -18,5 +18,5 @@ export function up(knex) {
  */
 export function down(knex) {
   return knex.schema
-    .dropTable('marcas');
+    .dropTable('clientes');
 }
