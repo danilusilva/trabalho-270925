@@ -1,9 +1,5 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
 export async function seed(knex) {
-  // Deletes ALL existing entries
+
   await knex("itens_pedido").del();
   await knex("itens_pedido").insert([
     { id_pedido: 1, id_produto: 3, quantidade: 1, preco_unitario: 7299 },
