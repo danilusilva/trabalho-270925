@@ -1,7 +1,6 @@
 import { database } from "../../database/index.js";
 import { listClientes, listByIdClientes } from "../controllers/clientes.js";
 import { list, listById } from "../controllers/marcas.js";
-// Certifique-se de que 'storePedido' está na sua importação de pedidos!
 import {
   listByIdPed,
   listPedidos,
